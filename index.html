@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Generator for QR-Bill</title>
+  </head>
+  <body>
+    <h2>Simple Generator for QR-Bill</h2>
+    <p>Using Googles QR-Generator to create a simple CH-QR-Bill</p>
+    IBAN:<input id="iban" placeholder="CH1234567890123456789" value="CH0983019ROBERTSALZER" type="text" size="24"><br/>
+    Name:<input id="name" placeholder="Vorname Name" value="Robert Salzer" type="text"/><br/>
+    Strasse:<input id="street" placeholder="Beispielstrasse" value="Beispielstrasse" type="text"/><br/>
+    Hausnummer:<input id="housenumber" placeholder="1" value="1" type="text"/><br/>
+    PLZ:<input id="plz" placeholder="8001" value="8001" type="text"/><br/>
+    Ort:<input id="place" placeholder="Zürich" value="Zürich" type="text"/><br/>
+    CHF-Betrag:<input id="amount" placeholder="5.00" value="5.00" type="text"/><br/>
+    Zahlungsgrund:<input id="reason" placeholder="Zahlungsgrund" value="Beispielzahlung" type="text" /><br/>
+    <button onclick="createQRCode()">Generieren</button><br/>
+    <img id="qr"/>
+    <script src="script.js"></script>
+  </body>
+</html>
