@@ -1,6 +1,3 @@
-
-
-
 // var chartURL = "https://chart.googleapis.com/chart?"+
 // "cht=qr&choe=UTF-8&chld=M|0&chs=400x400"+
 // "&chl="+
