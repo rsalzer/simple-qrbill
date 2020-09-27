@@ -46,7 +46,9 @@ function copyIban() {
   el.setSelectionRange(0, 99999)
   document.execCommand('copy');
   document.body.removeChild(el);
-  alert(iban+" wurde in die Zwischenablage kopiert");
+  setTimeout(function() {
+    alert(iban+" wurde in die Zwischenablage kopiert");
+  }, 300);
 }
 
 createQRCode();
