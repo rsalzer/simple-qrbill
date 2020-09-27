@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Kaffee</title>
+  </head>
+  <body>
+    <main>
+      <header id="page-header">
+        <h2>Merci! 🙏</h2>
+        <p>Vielen Dank, dass Du die Weiterentwicklung meiner Seite unterstützt!</p>
+        <p>
+          Um mir einen Kaffee zu spendieren, gibt es zwei Möglichkeiten:
+          <ul>
+            <li><a onclick="showPayment()" href="#">Per Banküberweisung</a> (bevorzugt, da auf beiden Seiten keine Gebühren anfallen)</li>
+            <li><a href="https://ko-fi.com/P5P11K3KP">Über ko-fi.com</a> (mittels Kreditkarte)</li>
+          </ul>
+        </p>
+      </header>
+      <div id="qrcode" style="display: none;">
+        <p>Scanne den folgenden QR-Code mit deiner Banking App <br>oder <a onclick="copyIban()" href="#">kopiere meine IBAN in die Zwischenablage</a>.</p>
+        <p>
+        Betrag:<input id="amount" placeholder="10.00" value="" type="text" onchange="createQRCode();"
+    onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"/>CHF<br/>
+        Mitteilung:<input id="reason" placeholder="Kaffee für Robert" type="text" onchange="createQRCode();"
+    onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"/><br/>
+        </p>
+        <img id="qr"/>
+      </div>
+    </main>
+    <script src="coffeescript.js"></script>
+  </body>
+</html>
