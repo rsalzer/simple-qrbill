@@ -42,6 +42,11 @@ input {
   text-align: right;
 }
 
+img {
+  width: 90%;
+  max-width: 300px;
+}
+
 .small {
   font-size: 13px;
 }
