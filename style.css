@@ -23,6 +23,9 @@ html {
 ul {
   list-style: none;
 }
+li {
+  padding: 3px;
+}
 body {
 	color: var(--color-main);
 	background-color: var(--color-background);
@@ -35,6 +38,10 @@ input {
 #amount {
   width: 50px;
   text-align: right;
+}
+
+.small {
+  font-size: 13px;
 }
 
 /* !page-navigation */
