@@ -1,24 +1,3 @@
-// var chartURL = "https://chart.googleapis.com/chart?"+
-// "cht=qr&choe=UTF-8&chld=M|0&chs=400x400"+
-// "&chl="+
-// "SPC%0A0200%0A1%0A"+
-// "CH0983019ROBERTSALZER"+//IBAN
-// "%0AS%0A"+
-// "Robert%20Salzer"+ //Name
-// "%0A"+"Bahnhofstrasse"+ //Strasse
-// "%0A"+"1"+ //Nummer
-// "%0A"+"8032"+ //PLZ
-// "%0A"+"Zürich"+ //ORT
-// "%0A"+"CH"+ //Land
-// "%0A%0A%0A%0A%0A%0A%0A%0A"+
-// "5.00"+ //Betrag
-// "%0A"+"CHF"+ //Währung
-// "%0A%0A%0A%0A%0A%0A%0A%0ANON%0A%0A"+
-// "Spende%20an%20Robert%20Salzer"+ //Beschreibung
-// "%0AEPD%0A";
-
-//chartURL = "https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chld=M|0&chs=400x400&chl=SPC%0A0200%0A1%0ACH0983019ROBERTSALZER%0AS%0ARobert%20Salzer%0A%0A%0A8032%0AZürich%0ACH%0A%0A%0A%0A%0A%0A%0A%0A5.00%0ACHF%0A%0A%0A%0A%0A%0A%0A%0ANON%0A%0ASpende%20an%20Robert%20Salzer%0AEPD%0A";
-
 const iban = "CH0983019ROBERTSALZER";
 
 function createQRCode() {
@@ -58,6 +37,7 @@ function showPayment() {
 }
 
 function copyIban() {
+  document.getElementById("accountdetails").style.display = 'block';
   var copyText = document.getElementById("iban");
   const el = document.createElement('textarea');
   el.value = iban;
