@@ -34,6 +34,8 @@ body {
 input {
   margin-left: 5px;
   margin-right: 3px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
 }
 #amount {
   width: 50px;
@@ -96,35 +98,5 @@ section > * > article:last-child {
 @media (max-width: 660px) {
 	.state-indicator {
 	   z-index: 2;
-	}
-	.table-group table {
-		display: table;
-		width: 100%;
-		margin-right: 0px;
-	}
-  .table-group table td,
-  .table-group table th {
-  	width: 50px;
-  }
-	.table-group table:nth-child(1) tbody > tr:last-child td {
-		border-bottom: 0;
-	}
-	.table-group table:nth-child(2) thead tr th {
-		visibility: hidden;
-		height: 0px;
-		overflow: hidden;
-		line-height: 0;
-		padding-top: 0px;
-		padding-bottom: 0px;
-	}
-	#international-table-group table:nth-child(2) {
-		margin-top: 1em !important;
-	}
-
-	#international-table-group table:nth-child(2) thead tr th {
-		visibility: visible !important;
-		height: 20px;
-		padding-top: 0.2em;
-		padding-bottom: 0.2em;
 	}
 }
