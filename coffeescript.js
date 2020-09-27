@@ -44,6 +44,7 @@ function copyIban() {
   document.body.appendChild(el);
   el.select();
   el.setSelectionRange(0, 99999)
+  alert(el.value+" wurde in die Zwischenablage kopiert");
   document.execCommand('copy');
   document.body.removeChild(el);
 }
