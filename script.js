@@ -50,6 +50,28 @@ function createQRCode() {
 
   var img = document.getElementById("qr");
   img.src = chartURL;
+
+  var directURL = "qrbill://"+
+  "SPC%0A0200%0A1%0A"+
+  encodeURIComponent(iban)+//IBAN
+  "%0AS%0A"+
+  encodeURIComponent(name)+ //Name
+  "%0A"+encodeURIComponent(street)+ //Strasse
+  "%0A"+encodeURIComponent(housenumber)+ //Nummer
+  "%0A"+encodeURIComponent(plz)+ //PLZ
+  "%0A"+encodeURIComponent(place)+ //ORT
+  "%0A"+"CH"+ //Land
+  "%0A%0A%0A%0A%0A%0A%0A%0A"+
+  encodeURIComponent(amount)+ //Betrag
+  "%0A"+"CHF"+ //Währung
+  "%0A%0A%0A%0A%0A%0A%0A%0ANON%0A%0A"+
+  encodeURIComponent(reason)+ //Beschreibung
+  "%0AEPD%0A";
+
+  var a = document.getElementById("qrbill");
+  a.href = directURL;
+
+
 }
 
 createQRCode();
