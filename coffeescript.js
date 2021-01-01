@@ -1,4 +1,4 @@
-const iban = "CH0983019ROBERTSALZER";
+const iban = "CH1304835083417090000";
 
 function createQRCode() {
   var plz = "8032";
