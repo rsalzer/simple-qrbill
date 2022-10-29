@@ -29,50 +29,37 @@ function createQRCode() {
   var amount = document.getElementById("amount").value;
   var reason = document.getElementById("reason").value;
 
+  var content = 
+    "SPC"+
+    "%0A"+"0200"+
+    "%0A"+"1"+
+    "%0A"+encodeURIComponent(iban.replace(/\s+/g, ''))+   //IBAN
+    "%0A"+"S"+                                            //S
+    "%0A"+encodeURIComponent(name)+                       //Name
+    "%0A"+encodeURIComponent(street)+                     //Strasse
+    "%0A"+encodeURIComponent(housenumber)+                //Nummer
+    "%0A"+encodeURIComponent(plz)+                        //PLZ
+    "%0A"+encodeURIComponent(place)+                      //ORT
+    "%0A"+"CH"+                                           //Land
+    "%0A%0A%0A%0A%0A%0A%0A"+                              //Leerzeilen
+    "%0A"+encodeURIComponent(Number(amount).toFixed(2))+  //Betrag
+    "%0A"+"CHF"+                                          //Währung
+    "%0A%0A%0A%0A%0A%0A%0A"+                              //Leerzeilen
+    "%0ANON"+                                             //NON
+    "%0A"+                                                //Leeerzeile
+    "%0A"+encodeURIComponent(reason)+                     //Beschreibung
+    "%0AEPD%0A";                                          //EPD
+
   var chartURL = "https://chart.googleapis.com/chart?"+
-  "cht=qr&choe=UTF-8&chld=M|0&chs=400x400"+
-  "&chl="+
-  "SPC%0A0200%0A1%0A"+
-  encodeURIComponent(iban)+//IBAN
-  "%0AS%0A"+
-  encodeURIComponent(name)+ //Name
-  "%0A"+encodeURIComponent(street)+ //Strasse
-  "%0A"+encodeURIComponent(housenumber)+ //Nummer
-  "%0A"+encodeURIComponent(plz)+ //PLZ
-  "%0A"+encodeURIComponent(place)+ //ORT
-  "%0A"+"CH"+ //Land
-  "%0A%0A%0A%0A%0A%0A%0A%0A"+
-  encodeURIComponent(amount)+ //Betrag
-  "%0A"+"CHF"+ //Währung
-  "%0A%0A%0A%0A%0A%0A%0A%0ANON%0A%0A"+
-  encodeURIComponent(reason)+ //Beschreibung
-  "%0AEPD%0A";
+    "cht=qr&choe=UTF-8&chld=M|0&chs=400x400"+
+    "&chl="+content;
 
   var img = document.getElementById("qr");
   img.src = chartURL;
 
-  var directURL = "qrbill://"+
-  "SPC%0A0200%0A1%0A"+
-  encodeURIComponent(iban)+//IBAN
-  "%0AS%0A"+
-  encodeURIComponent(name)+ //Name
-  "%0A"+encodeURIComponent(street)+ //Strasse
-  "%0A"+encodeURIComponent(housenumber)+ //Nummer
-  "%0A"+encodeURIComponent(plz)+ //PLZ
-  "%0A"+encodeURIComponent(place)+ //ORT
-  "%0A"+"CH"+ //Land
-  "%0A%0A%0A%0A%0A%0A%0A%0A"+
-  encodeURIComponent(amount)+ //Betrag
-  "%0A"+"CHF"+ //Währung
-  "%0A%0A%0A%0A%0A%0A%0A%0ANON%0A%0A"+
-  encodeURIComponent(reason)+ //Beschreibung
-  "%0AEPD%0A";
-
+  var directURL = "qrbill://"+content;
   var a = document.getElementById("qrbill");
   a.href = directURL;
-
-
 }
 
 createQRCode();
-
